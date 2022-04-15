@@ -16,7 +16,8 @@ public class ProductCommand extends Command {
 
 	@Override
 	public void execute() {
-		new SugarMenu(product).execute();
+		SugarMenu sugarMenu = new SugarMenu(product);
+		sugarMenu.execute();
 		DeviceFacade.instance().removeCoffe(product.getCoffeConsumption());
 		DeviceFacade.instance().removeSugar(product.getSugarConsumption());
 		DeviceFacade.instance().removeWater(product.getWaterConsumption());

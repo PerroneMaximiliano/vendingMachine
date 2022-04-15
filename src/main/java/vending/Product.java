@@ -10,7 +10,7 @@ public class Product {
 	
 	private int coffeConsumption;
 	
-	public Product(String description, int waterConsumption, int coffeConsumption){
+	public Product(String description, int waterConsumption, int coffeConsumption) {
 		this.description = description;
 		this.waterConsumption = waterConsumption;
 		this.coffeConsumption = coffeConsumption;
@@ -35,5 +35,4 @@ public class Product {
 	public int getWaterConsumption() {
 		return waterConsumption;
 	}
-
 }

@@ -1,23 +1,26 @@
 package vending.devices;
 
-public class SugarDeposit extends Device {
+public class SugarDeposit extends Subject {
 
-    private static final int MINIMUM = 12;
+    protected Integer quantity;
 
-    public SugarDeposit(Panel panel) {
-        super(panel);
-        this.panel.set(this);
+    private static final int MINIMUM = 80;
+
+    public SugarDeposit() {
+        quantity = 0;
     }
 
-    @Override
-    protected Boolean checkQuantity() {
-        return this.hasEnoughMilligrams();
+    public void add(int quantity) {
+        this.quantity += quantity;
+    }
+
+    public void remove(int quantity) {
+        this.quantity -= quantity;
     }
 
     protected Boolean hasEnoughMilligrams() {
         return quantity >= SugarDeposit.MINIMUM;
     }
-
 
     @Override
     public String toString() {

@@ -1,23 +1,26 @@
 package vending.devices;
 
-public class WaterTank extends Device {
+public class WaterTank extends Subject {
+
+    protected Integer quantity;
 
     private static final int MINIMUM = 100;
 
-    public WaterTank(Panel panel) {
-        super(panel);
-        this.panel.set(this);
+    public WaterTank() {
+        quantity = 0;
     }
 
-    @Override
-    protected Boolean checkQuantity() {
-        return this.hasEnoughMilliliters();
+    public void add(int quantity) {
+        this.quantity += quantity;
+    }
+
+    public void remove(int quantity) {
+        this.quantity -= quantity;
     }
 
     protected boolean hasEnoughMilliliters() {
         return quantity > WaterTank.MINIMUM;
     }
-
 
     @Override
     public String toString() {

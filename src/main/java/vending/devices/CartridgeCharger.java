@@ -1,17 +1,21 @@
 package vending.devices;
 
-public class CartridgeCharger extends Device {
+public class CartridgeCharger extends Subject {
+
+    protected Integer quantity;
 
     private static final int MINIMUM = 1;
 
-    public CartridgeCharger(Panel panel) {
-        super(panel);
-        this.panel.set(this);
+    public CartridgeCharger() {
+        quantity = 0;
     }
 
-    @Override
-    protected Boolean checkQuantity() {
-        return this.hasCartridgeCharger();
+    public void add(int quantity) {
+        this.quantity += quantity;
+    }
+
+    public void remove(int quantity) {
+        this.quantity -= quantity;
     }
 
     protected boolean hasCartridgeCharger() {

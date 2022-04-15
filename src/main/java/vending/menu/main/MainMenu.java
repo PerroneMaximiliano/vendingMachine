@@ -15,9 +15,9 @@ public class MainMenu extends Menu {
 		this.set();
 	}
 	
-	private void set(){
+	private void set() {
 		System.out.println(DeviceFacade.instance());
-		if (DeviceFacade.instance().isActiveVending()){
+		if (DeviceFacade.instance().isActiveVending()) {
 			this.activeVendingSet();
 		} else {
 			this.deactiveVendingSet();
@@ -31,13 +31,13 @@ public class MainMenu extends Menu {
 		commandList.add(new ProductCommand(new Product("Cafe ole", 3, 3)));
 		commandList.add(new ProductCommand(new Product("Cafe capuccino", 4, 4)));
 		commandList.add(new ManagerMenuCommand());
-		this.commandList.add(exitCommand);
+		commandList.add(exitCommand);
 	}
 	
 	private void deactiveVendingSet() {
 		commandList.clear();
 		commandList.add(new ManagerMenuCommand());
-		this.commandList.add(exitCommand);
+		commandList.add(exitCommand);
 	}
 	
 	public void execute() {
